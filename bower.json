@@ -1,0 +1,16 @@
+{
+  "name": "webApp101_part5",
+  "version": "0.0.0",
+  "authors": [
+    "Even <kiki44552002@gmail.com>"
+  ],
+  "description": "express todo list",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
