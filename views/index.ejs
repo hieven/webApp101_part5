@@ -14,25 +14,57 @@
 		</div>
 
 		<div class="row" id="newItemInput">
-			<form action="./create" method="POST" class="form-horizontal">
+			<form action="./" method="POST" class="form-horizontal">
 				<div class="form-group">
-				    <input type="text" class="form-control col-md-10" id="newItem" placeholder="新事項">
+						<div class="col-md-10 col-md-offset-1">
+				    	<input type="text" class="form-control" name="item" id="newItem" placeholder="新事項">
+				    </div>
 				 </div>
 			</form>
 		</div>
 
 		<div class="row" id="todoList">
-			<div class="item"><span></span>1</div>
-			<div class="item">1</div>
-			<div class="item">1</div>
-			<div class="item">1</div>
-			<div class="item">1</div>
-			<div class="item">1</div>
+			
 		</div>
+
+		<h1>In Progress</h1>
+		<div class="list-group" id="progress_box">
+			<% items.forEach(function(item) { %>	
+				<% if (!item.done) { %>
+					<div class="list-group-item">
+						<%= item.name %>
+						<div class="operations pull-right">
+							<button class="btn btn-primary btn-xs checked-btn" data-id=<%= item._id %>>完成</button>
+							<button class="btn btn-danger btn-xs delete-btn" data-id=<%= item._id %>>刪除</button>
+						</div>
+						
+					</div>
+				<% } %>
+			<% }); %>
+		</div>
+
+		<h1>Archive</h1>
+		<div class="list-group" id="archive_box">
+			<% items.forEach(function(item) { %>
+				<% if (item.done) { %>	
+					<div class="list-group-item">
+						<del><%= item.name %></del>
+						<div class="operations pull-right">
+							<button class="btn btn-info btn-xs undo-btn" data-id=<%= item._id %>>復原</button>
+						</div>
+					</div>
+
+				<% } %>
+			<% }); %>
+		</div>
+
+		
+
 	</div>
 
 
 	<script src="/components/jquery/dist/jquery.min.js"></script>
-    <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/javascripts/index.js"></script>
   </body>
 </html>
