@@ -3,10 +3,36 @@
   <head>
     <title>Express Todo-List</title>
     <link rel="stylesheet" href="/components/components-font-awesome/css/font-awesome.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    
+	<div class="container" id="wrapper">
+		<div class="row" id="title">
+			<h1>你今天完成了沒？</h1>
+		</div>
+
+		<div class="row" id="newItemInput">
+			<form action="./create" method="POST" class="form-horizontal">
+				<div class="form-group">
+				    <input type="text" class="form-control col-md-10" id="newItem" placeholder="新事項">
+				 </div>
+			</form>
+		</div>
+
+		<div class="row" id="todoList">
+			<div class="item"><span></span>1</div>
+			<div class="item">1</div>
+			<div class="item">1</div>
+			<div class="item">1</div>
+			<div class="item">1</div>
+			<div class="item">1</div>
+		</div>
+	</div>
+
+
+	<script src="/components/jquery/dist/jquery.min.js"></script>
+    <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
