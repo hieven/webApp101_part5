@@ -1,0 +1,9 @@
+# TODO List
+
+### How to start ?
+
+```sh
+$bower i
+$npm i
+$gulp
+```
